@@ -1,0 +1,10 @@
+{
+  "domain": "alert-feedback-governance",
+  "version": 1,
+  "facts": [
+    "全国排查下发近两百万条核查线索",
+    "线索需要地方核查后才能形成结论",
+    "反馈质量会影响后续风险识别"
+  ],
+  "sample_id": "sample-016"
+}
