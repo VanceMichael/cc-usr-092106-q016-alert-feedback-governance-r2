@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "快照批次说明",
+  "description": "模型负责人对某批反馈为何可用、哪些被排除的正式说明，与快照一一对应并纳入审计。",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "prepared_by",
+    "prepared_at",
+    "usable",
+    "rationale",
+    "exclusion_summary",
+    "attestation"
+  ],
+  "properties": {
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "prepared_by": {"type": "string", "minLength": 1},
+    "prepared_at": {"type": "string", "format": "date-time"},
+    "usable": {"type": "boolean"},
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "description": "本批反馈为何可用：标签来源、稳定性保证、脱敏与切分方式"
+    },
+    "exclusion_summary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["exclusion_code", "count", "reason"],
+        "properties": {
+          "exclusion_code": {
+            "type": "string",
+            "enum": [
+              "open_case",
+              "cross_region_duplicate",
+              "rule_self_proof",
+              "insufficient_evidence",
+              "evidence_not_sufficient",
+              "settling_window",
+              "outside_cutoff",
+              "revoked_label",
+              "no_label",
+              "permission_denied",
+              "duplicate_cross_split"
+            ]
+          },
+          "count": {"type": "integer", "minimum": 0},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "attestation": {
+      "type": "string",
+      "minLength": 1,
+      "description": "签发人声明：已核对排除清单与脱敏变换，确认快照可供指定训练用途使用"
+    }
+  },
+  "additionalProperties": false
+}

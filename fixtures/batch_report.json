@@ -1,0 +1,55 @@
+{
+  "snapshot_id": "snap-2026-07-pre",
+  "prepared_by": "模型负责人（虚构）",
+  "prepared_at": "2026-07-01T11:00:00+08:00",
+  "usable": true,
+  "rationale": "快照 snap-2026-07-pre 以 2026-07-01T00:00:00+08:00 为标签水位，仅纳入证据充分且经过 14 天冷静期的稳定标签；按标签稳定时间做 train/validation/test 切分，同一主体不跨分区；主体标识加盐假名化、区域下沉为大区桶、时间按月取整。",
+  "exclusion_summary": [
+    {
+      "exclusion_code": "cross_region_duplicate",
+      "count": 2,
+      "reason": "跨区域重复线索未经主办区域裁决，或非主办副本"
+    },
+    {
+      "exclusion_code": "duplicate_cross_split",
+      "count": 1,
+      "reason": "同一主体已进入更早的时间分区，防止跨分区泄漏"
+    },
+    {
+      "exclusion_code": "evidence_not_sufficient",
+      "count": 1,
+      "reason": "签发时未确认证据充分"
+    },
+    {
+      "exclusion_code": "insufficient_evidence",
+      "count": 1,
+      "reason": "证据暂缺，“未立案/未查实”不能等同于阴性"
+    },
+    {
+      "exclusion_code": "open_case",
+      "count": 1,
+      "reason": "线索尚未结案，结论可能继续变化"
+    },
+    {
+      "exclusion_code": "outside_cutoff",
+      "count": 1,
+      "reason": "标签稳定时间晚于快照水位"
+    },
+    {
+      "exclusion_code": "revoked_label",
+      "count": 1,
+      "reason": "标签已被撤销"
+    },
+    {
+      "exclusion_code": "rule_self_proof",
+      "count": 1,
+      "reason": "规则自证：结论由被评估规则自身产出，不能作为该规则的监督信号"
+    },
+    {
+      "exclusion_code": "settling_window",
+      "count": 1,
+      "reason": "标签仍在冷静期内，尚未稳定"
+    }
+  ],
+  "attestation": "已逐条核对纳入清单、排除清单与脱敏变换，确认本快照仅用于 riskmodel-v4 规则反馈再训练。"
+}

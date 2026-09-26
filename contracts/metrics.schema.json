@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "上线后监控指标",
+  "description": "追踪命中分布与人工负担变化；每条聚合指标保留可下钻的 lead_id 列表，支撑从指标回到签发依据的审计。",
+  "type": "object",
+  "required": ["deployment_id", "windows", "lead_hits"],
+  "properties": {
+    "deployment_id": {"type": "string", "minLength": 1},
+    "windows": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["window", "starts_at", "ends_at"],
+        "properties": {
+          "window": {
+            "type": "string",
+            "enum": ["pre", "post"]
+          },
+          "starts_at": {"type": "string", "format": "date-time"},
+          "ends_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "lead_hits": {
+      "type": "array",
+      "description": "每条线索在命中时记录所属版本窗口与人工处置工作量",
+      "items": {
+        "type": "object",
+        "required": [
+          "lead_id",
+          "trigger_version",
+          "hit_at",
+          "window",
+          "region_code",
+          "review_minutes",
+          "needs_manual_review",
+          "final_label"
+        ],
+        "properties": {
+          "lead_id": {"type": "string", "minLength": 1},
+          "trigger_version": {"type": "string", "minLength": 1},
+          "hit_at": {"type": "string", "format": "date-time"},
+          "window": {
+            "type": "string",
+            "enum": ["pre", "post"]
+          },
+          "region_code": {"type": "string", "pattern": "^[0-9]{6}$"},
+          "review_minutes": {
+            "type": "number",
+            "minimum": 0,
+            "description": "该线索耗费的人工复核分钟数"
+          },
+          "needs_manual_review": {"type": "boolean"},
+          "final_label": {
+            "type": ["string", "null"],
+            "enum": ["positive", "negative", "excluded", null]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

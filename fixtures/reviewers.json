@@ -1,0 +1,46 @@
+{
+  "reviewers": [
+    {
+      "reviewer_id": "RV-001",
+      "display_name": "王鉴（虚构）",
+      "roles": ["senior_reviewer"],
+      "region_scopes": ["*"],
+      "active": true
+    },
+    {
+      "reviewer_id": "RV-002",
+      "display_name": "李慎（虚构）",
+      "roles": ["senior_reviewer"],
+      "region_scopes": ["110101", "110105", "110108"],
+      "active": true
+    },
+    {
+      "reviewer_id": "RV-003",
+      "display_name": "周明（虚构）",
+      "roles": ["investigator"],
+      "region_scopes": ["*"],
+      "active": true
+    },
+    {
+      "reviewer_id": "RV-004",
+      "display_name": "赵衡（虚构）",
+      "roles": ["senior_reviewer"],
+      "region_scopes": ["330106"],
+      "active": true
+    },
+    {
+      "reviewer_id": "RV-005",
+      "display_name": "孙审（虚构）",
+      "roles": ["auditor"],
+      "region_scopes": ["*"],
+      "active": true
+    },
+    {
+      "reviewer_id": "RV-006",
+      "display_name": "钱退（虚构）",
+      "roles": ["senior_reviewer"],
+      "region_scopes": ["*"],
+      "active": false
+    }
+  ]
+}

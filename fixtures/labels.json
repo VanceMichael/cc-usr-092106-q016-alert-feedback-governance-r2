@@ -1,0 +1,310 @@
+[
+  {
+    "lead_id": "L-2026-1001",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_filed",
+      "evidence_ids": [
+        "EV-1001-A",
+        "EV-1001-B"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-03-10T09:30:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1002",
+    "version": 1,
+    "label": "negative",
+    "basis": {
+      "outcome": "legal_exception",
+      "evidence_ids": [
+        "EV-1002-EXEMPT"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-03-20T14:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1003",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_unfiled",
+      "evidence_ids": [
+        "EV-1003-A"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-04-05T10:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1005",
+    "version": 1,
+    "label": "negative",
+    "basis": {
+      "outcome": "data_error",
+      "evidence_ids": [
+        "EV-1005-CORRECTION"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-05-12T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1006",
+    "version": 1,
+    "label": "excluded",
+    "basis": {
+      "outcome": "rule_self_proof",
+      "evidence_ids": [
+        "EV-1006-RULEHIT-ONLY"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-05-15T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1007",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_filed",
+      "evidence_ids": [
+        "EV-1007-FILING"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-05-20T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1008",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_filed",
+      "evidence_ids": [
+        "EV-1008-FILING-COPY"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-05-23T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1011",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_filed",
+      "evidence_ids": [
+        "EV-1011-MERGED-RECORD"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-05-18T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "revoked",
+    "revoked_at": "2026-05-28T16:00:00+08:00",
+    "revoke_reason": "虚构样例：核查后确认主体串档，原立案标签依据错误，撤销。"
+  },
+  {
+    "lead_id": "L-2026-1012",
+    "version": 1,
+    "label": "negative",
+    "basis": {
+      "outcome": "legal_exception",
+      "evidence_ids": [
+        "EV-1012-INITIAL"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-02-20T10:00:00+08:00",
+    "supersedes_version": null,
+    "status": "superseded"
+  },
+  {
+    "lead_id": "L-2026-1012",
+    "version": 2,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_filed",
+      "evidence_ids": [
+        "EV-1012-NEW-A",
+        "EV-1012-NEW-B"
+      ],
+      "evidence_sufficient": true,
+      "source": "appeal",
+      "appeal_id": "AP-2026-22",
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-05-26T15:30:00+08:00",
+    "supersedes_version": 1,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1013",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_filed",
+      "evidence_ids": [
+        "EV-1013-A"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-002",
+    "issued_at": "2026-06-26T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1014",
+    "version": 1,
+    "label": "negative",
+    "basis": {
+      "outcome": "legal_exception",
+      "evidence_ids": [
+        "EV-1014-EXEMPT-LATE"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-08-02T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1015",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_unfiled",
+      "evidence_ids": [
+        "EV-1015-LEGACY"
+      ],
+      "evidence_sufficient": false,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-03-05T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1016",
+    "version": 1,
+    "label": "positive",
+    "basis": {
+      "outcome": "violation_filed",
+      "evidence_ids": [
+        "EV-1016-A"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-03-01T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1017",
+    "version": 1,
+    "label": "negative",
+    "basis": {
+      "outcome": "legal_exception",
+      "evidence_ids": [
+        "EV-1017-EXEMPT"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-05-10T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  },
+  {
+    "lead_id": "L-2026-1019",
+    "version": 1,
+    "label": "negative",
+    "basis": {
+      "outcome": "legal_exception",
+      "evidence_ids": [
+        "EV-1019-FILED"
+      ],
+      "evidence_sufficient": true,
+      "source": "field_check",
+      "appeal_id": null,
+      "case_ref": null
+    },
+    "issued_by": "RV-001",
+    "issued_at": "2026-06-16T09:00:00+08:00",
+    "supersedes_version": null,
+    "status": "issued"
+  }
+]

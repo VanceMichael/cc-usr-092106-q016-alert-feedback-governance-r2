@@ -1,0 +1,117 @@
+{
+  "deployment_id": "D-2026-06",
+  "windows": [
+    {
+      "window": "pre",
+      "starts_at": "2026-05-02T00:00:00+08:00",
+      "ends_at": "2026-05-31T23:59:59+08:00"
+    },
+    {
+      "window": "post",
+      "starts_at": "2026-06-01T00:00:00+08:00",
+      "ends_at": "2026-06-30T23:59:59+08:00"
+    }
+  ],
+  "lead_hits": [
+    {
+      "lead_id": "L-2026-1005",
+      "trigger_version": "ruleset-2026.04",
+      "hit_at": "2026-05-02T08:00:00+08:00",
+      "window": "pre",
+      "region_code": "330106",
+      "review_minutes": 95,
+      "needs_manual_review": true,
+      "final_label": "negative"
+    },
+    {
+      "lead_id": "L-2026-1006",
+      "trigger_version": "ruleset-2026.04",
+      "hit_at": "2026-05-04T08:00:00+08:00",
+      "window": "pre",
+      "region_code": "120101",
+      "review_minutes": 40,
+      "needs_manual_review": true,
+      "final_label": "excluded"
+    },
+    {
+      "lead_id": "L-2026-1007",
+      "trigger_version": "ruleset-2026.04",
+      "hit_at": "2026-05-06T08:00:00+08:00",
+      "window": "pre",
+      "region_code": "320105",
+      "review_minutes": 120,
+      "needs_manual_review": true,
+      "final_label": "positive"
+    },
+    {
+      "lead_id": "L-2026-1008",
+      "trigger_version": "ruleset-2026.04",
+      "hit_at": "2026-05-06T08:05:00+08:00",
+      "window": "pre",
+      "region_code": "420102",
+      "review_minutes": 60,
+      "needs_manual_review": true,
+      "final_label": "positive"
+    },
+    {
+      "lead_id": "L-2026-1009",
+      "trigger_version": "ruleset-2026.04",
+      "hit_at": "2026-05-08T08:00:00+08:00",
+      "window": "pre",
+      "region_code": "420102",
+      "review_minutes": 30,
+      "needs_manual_review": true,
+      "final_label": "excluded"
+    },
+    {
+      "lead_id": "L-2026-1011",
+      "trigger_version": "ruleset-2026.04",
+      "hit_at": "2026-05-10T08:00:00+08:00",
+      "window": "pre",
+      "region_code": "310115",
+      "review_minutes": 150,
+      "needs_manual_review": true,
+      "final_label": null
+    },
+    {
+      "lead_id": "L-2026-1010",
+      "trigger_version": "ruleset-2026.07",
+      "hit_at": "2026-06-06T08:00:00+08:00",
+      "window": "post",
+      "region_code": "110105",
+      "review_minutes": 70,
+      "needs_manual_review": true,
+      "final_label": null
+    },
+    {
+      "lead_id": "L-2026-1019",
+      "trigger_version": "ruleset-2026.07",
+      "hit_at": "2026-06-02T08:00:00+08:00",
+      "window": "post",
+      "region_code": "320106",
+      "review_minutes": 0,
+      "needs_manual_review": false,
+      "final_label": "negative"
+    },
+    {
+      "lead_id": "L-2026-1013",
+      "trigger_version": "ruleset-2026.07",
+      "hit_at": "2026-06-24T08:00:00+08:00",
+      "window": "post",
+      "region_code": "110108",
+      "review_minutes": 55,
+      "needs_manual_review": true,
+      "final_label": "positive"
+    },
+    {
+      "lead_id": "L-2026-1014",
+      "trigger_version": "ruleset-2026.07",
+      "hit_at": "2026-06-28T08:00:00+08:00",
+      "window": "post",
+      "region_code": "310116",
+      "review_minutes": 45,
+      "needs_manual_review": true,
+      "final_label": "negative"
+    }
+  ]
+}

@@ -1,0 +1,755 @@
+[
+  {
+    "lead_id": "L-2026-1001",
+    "subject_ref": "S-001",
+    "region_code": "110101",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-CONC-02",
+        "R-FLOW-11"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-02-20T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260220"
+        },
+        {
+          "source": "filings",
+          "snapshot_id": "fil-20260219"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "110101",
+        "310101",
+        "440103"
+      ],
+      "dispatched_at": "2026-02-20T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "violation_filed",
+      "reason_codes": [
+        "concealed-related-party",
+        "late-disclosure"
+      ],
+      "narrative": "虚构样例：关联关系未披露，已立案处理。",
+      "decided_at": "2026-03-09T15:00:00+08:00"
+    },
+    "created_at": "2026-02-20T08:00:00+08:00",
+    "updated_at": "2026-03-09T15:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1002",
+    "subject_ref": "S-002",
+    "region_code": "310101",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "model",
+      "version": "riskmodel-v3",
+      "rule_ids": [],
+      "model_score": 0.91
+    },
+    "input_watermark": {
+      "as_of": "2026-03-01T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260301"
+        },
+        {
+          "source": "transactions",
+          "snapshot_id": "txn-20260228"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "regional",
+      "regions": [
+        "310101"
+      ],
+      "dispatched_at": "2026-03-01T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "legal_exception",
+      "reason_codes": [
+        "approved-exemption",
+        "filing-on-time"
+      ],
+      "narrative": "虚构样例：交易属已批准的豁免安排，豁免批文齐备。",
+      "decided_at": "2026-03-19T10:00:00+08:00"
+    },
+    "created_at": "2026-03-01T08:00:00+08:00",
+    "updated_at": "2026-03-19T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1003",
+    "subject_ref": "S-003",
+    "region_code": "440103",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "hybrid",
+      "version": "ruleset-2026.04+riskmodel-v3",
+      "rule_ids": [
+        "R-FLOW-11"
+      ],
+      "model_score": 0.78
+    },
+    "input_watermark": {
+      "as_of": "2026-03-15T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "filings",
+          "snapshot_id": "fil-20260314"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "440103",
+        "330106"
+      ],
+      "dispatched_at": "2026-03-15T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "violation_unfiled",
+      "reason_codes": [
+        "misstatement-confirmed",
+        "below-filing-threshold"
+      ],
+      "narrative": "虚构样例：错报经核查确认，但情节未达立案标准，作违规未立案处理。",
+      "decided_at": "2026-04-04T14:00:00+08:00"
+    },
+    "created_at": "2026-03-15T08:00:00+08:00",
+    "updated_at": "2026-04-04T14:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1004",
+    "subject_ref": "S-004",
+    "region_code": "510104",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "model",
+      "version": "riskmodel-v3",
+      "rule_ids": [],
+      "model_score": 0.63
+    },
+    "input_watermark": {
+      "as_of": "2026-03-20T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "transactions",
+          "snapshot_id": "txn-20260319"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "regional",
+      "regions": [
+        "510104"
+      ],
+      "dispatched_at": "2026-03-20T09:00:00+08:00"
+    },
+    "stage": "concluded",
+    "conclusion": {
+      "outcome": "insufficient_evidence",
+      "reason_codes": [
+        "records-incomplete",
+        "counterparty-unreachable"
+      ],
+      "narrative": "虚构样例：关键流水缺失且相对方无法联系，证据暂缺，不等于无违规。",
+      "decided_at": "2026-04-09T11:00:00+08:00"
+    },
+    "created_at": "2026-03-20T08:00:00+08:00",
+    "updated_at": "2026-04-09T11:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1005",
+    "subject_ref": "S-005",
+    "region_code": "330106",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-DUP-03"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-05-02T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260501"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "330106",
+        "320105"
+      ],
+      "dispatched_at": "2026-05-02T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "data_error",
+      "reason_codes": [
+        "stale-registry-record",
+        "entity-id-collision"
+      ],
+      "narrative": "虚构样例：登记库主键碰撞导致同名误报，源数据更正后排除。",
+      "decided_at": "2026-05-11T16:00:00+08:00"
+    },
+    "created_at": "2026-05-02T08:00:00+08:00",
+    "updated_at": "2026-05-11T16:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1006",
+    "subject_ref": "S-006",
+    "region_code": "120101",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-DUP-03",
+        "R-CONC-02"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-05-04T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "rule-hits",
+          "snapshot_id": "rh-20260503"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "special",
+      "regions": [
+        "120101"
+      ],
+      "dispatched_at": "2026-05-04T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "rule_self_proof",
+      "reason_codes": [
+        "same-ruleset-output",
+        "no-independent-evidence"
+      ],
+      "narrative": "虚构样例：核查结论仅复述规则自身命中结果，无独立证据，属规则自证。",
+      "decided_at": "2026-05-14T10:00:00+08:00"
+    },
+    "created_at": "2026-05-04T08:00:00+08:00",
+    "updated_at": "2026-05-14T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1007",
+    "subject_ref": "S-007",
+    "region_code": "320105",
+    "cross_region_group": "GRP-2026-77",
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-DUP-03"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-05-06T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260505"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "320105",
+        "420102"
+      ],
+      "dispatched_at": "2026-05-06T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "violation_filed",
+      "reason_codes": [
+        "duplicate-filing",
+        "host-region-adjudicated"
+      ],
+      "narrative": "虚构样例：跨区域重复线索，江苏主办并立案。",
+      "decided_at": "2026-05-19T15:00:00+08:00"
+    },
+    "created_at": "2026-05-06T08:00:00+08:00",
+    "updated_at": "2026-05-19T15:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1008",
+    "subject_ref": "S-007",
+    "region_code": "420102",
+    "cross_region_group": "GRP-2026-77",
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-DUP-03"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-05-06T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260505"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "320105",
+        "420102"
+      ],
+      "dispatched_at": "2026-05-06T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "violation_filed",
+      "reason_codes": [
+        "duplicate-filing",
+        "host-region-adjudicated"
+      ],
+      "narrative": "虚构样例：同一主体的湖北副本，结论与主办一致，快照中须去重。",
+      "decided_at": "2026-05-22T15:00:00+08:00"
+    },
+    "created_at": "2026-05-06T08:05:00+08:00",
+    "updated_at": "2026-05-22T15:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1009",
+    "subject_ref": "S-009",
+    "region_code": "420102",
+    "cross_region_group": "GRP-2026-99",
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-DUP-03"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-05-08T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260507"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "420102",
+        "610102"
+      ],
+      "dispatched_at": "2026-05-08T09:00:00+08:00"
+    },
+    "stage": "concluded",
+    "conclusion": {
+      "outcome": "duplicate_pending",
+      "reason_codes": [
+        "awaiting-host-region"
+      ],
+      "narrative": "虚构样例：与陕西线索疑似重复，主办区域尚未裁决，暂不生成稳定标签。",
+      "decided_at": "2026-05-25T10:00:00+08:00"
+    },
+    "created_at": "2026-05-08T08:00:00+08:00",
+    "updated_at": "2026-05-25T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1010",
+    "subject_ref": "S-010",
+    "region_code": "110105",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.07",
+      "rule_ids": [
+        "R-CONC-02"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-06-06T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "filings",
+          "snapshot_id": "fil-20260605"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "regional",
+      "regions": [
+        "110105"
+      ],
+      "dispatched_at": "2026-06-06T09:00:00+08:00"
+    },
+    "stage": "checking",
+    "conclusion": null,
+    "created_at": "2026-06-06T08:00:00+08:00",
+    "updated_at": "2026-06-20T17:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1011",
+    "subject_ref": "S-011",
+    "region_code": "310115",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-FLOW-11"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-05-10T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "filings",
+          "snapshot_id": "fil-20260509"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "regional",
+      "regions": [
+        "310115"
+      ],
+      "dispatched_at": "2026-05-10T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "data_error",
+      "reason_codes": [
+        "wrong-entity-merged"
+      ],
+      "narrative": "虚构样例：初判立案后发现主体串档，原标签撤销。",
+      "decided_at": "2026-05-28T10:00:00+08:00"
+    },
+    "created_at": "2026-05-10T08:00:00+08:00",
+    "updated_at": "2026-05-28T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1012",
+    "subject_ref": "S-012",
+    "region_code": "330102",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "model",
+      "version": "riskmodel-v3",
+      "rule_ids": [],
+      "model_score": 0.88
+    },
+    "input_watermark": {
+      "as_of": "2026-01-10T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "transactions",
+          "snapshot_id": "txn-20260109"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "330102",
+        "110101"
+      ],
+      "dispatched_at": "2026-01-10T09:00:00+08:00"
+    },
+    "stage": "appealed",
+    "conclusion": {
+      "outcome": "violation_filed",
+      "reason_codes": [
+        "appeal-upheld",
+        "new-evidence"
+      ],
+      "narrative": "虚构样例：初判合法例外，申诉后调取新证据改判立案，形成 v2 标签。",
+      "decided_at": "2026-05-25T15:00:00+08:00"
+    },
+    "created_at": "2026-01-10T08:00:00+08:00",
+    "updated_at": "2026-05-25T15:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1013",
+    "subject_ref": "S-013",
+    "region_code": "110108",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.07",
+      "rule_ids": [
+        "R-FLOW-11"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-06-24T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "filings",
+          "snapshot_id": "fil-20260623"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "regional",
+      "regions": [
+        "110108"
+      ],
+      "dispatched_at": "2026-06-24T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "violation_filed",
+      "reason_codes": [
+        "late-disclosure"
+      ],
+      "narrative": "虚构样例：刚签发未满冷静期，本批快照暂不纳入。",
+      "decided_at": "2026-06-25T10:00:00+08:00"
+    },
+    "created_at": "2026-06-24T08:00:00+08:00",
+    "updated_at": "2026-06-25T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1014",
+    "subject_ref": "S-014",
+    "region_code": "310116",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.07",
+      "rule_ids": [
+        "R-DUP-03"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-06-28T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260627"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "regional",
+      "regions": [
+        "310116"
+      ],
+      "dispatched_at": "2026-06-28T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "legal_exception",
+      "reason_codes": [
+        "approved-exemption"
+      ],
+      "narrative": "虚构样例：豁免批文齐备，但标签在快照水位之后才完成签发。",
+      "decided_at": "2026-07-19T10:00:00+08:00"
+    },
+    "created_at": "2026-06-28T08:00:00+08:00",
+    "updated_at": "2026-07-19T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1015",
+    "subject_ref": "S-015",
+    "region_code": "440104",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-FLOW-11"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-02-12T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "filings",
+          "snapshot_id": "fil-20260211"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "regional",
+      "regions": [
+        "440104"
+      ],
+      "dispatched_at": "2026-02-12T09:00:00+08:00"
+    },
+    "stage": "concluded",
+    "conclusion": {
+      "outcome": "violation_unfiled",
+      "reason_codes": [
+        "minor-irregularity"
+      ],
+      "narrative": "虚构样例：历史遗留标签在证据充分性字段上线前签发，需被资格校验拦截。",
+      "decided_at": "2026-03-04T10:00:00+08:00"
+    },
+    "created_at": "2026-02-12T08:00:00+08:00",
+    "updated_at": "2026-03-04T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1016",
+    "subject_ref": "S-008",
+    "region_code": "510105",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.04",
+      "rule_ids": [
+        "R-CONC-02"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-02-01T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260131"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "510105",
+        "510106"
+      ],
+      "dispatched_at": "2026-02-01T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "violation_filed",
+      "reason_codes": [
+        "concealed-related-party"
+      ],
+      "narrative": "虚构样例：同一主体较早的一条线索，进入训练分区。",
+      "decided_at": "2026-02-28T10:00:00+08:00"
+    },
+    "created_at": "2026-02-01T08:00:00+08:00",
+    "updated_at": "2026-02-28T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1017",
+    "subject_ref": "S-008",
+    "region_code": "510106",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "model",
+      "version": "riskmodel-v3",
+      "rule_ids": [],
+      "model_score": 0.7
+    },
+    "input_watermark": {
+      "as_of": "2026-04-01T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "transactions",
+          "snapshot_id": "txn-20260331"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "510105",
+        "510106"
+      ],
+      "dispatched_at": "2026-04-01T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "legal_exception",
+      "reason_codes": [
+        "approved-exemption"
+      ],
+      "narrative": "虚构样例：同一主体较晚线索落入验证分区，须按跨分区泄漏排除。",
+      "decided_at": "2026-05-09T10:00:00+08:00"
+    },
+    "created_at": "2026-04-01T08:00:00+08:00",
+    "updated_at": "2026-05-09T10:00:00+08:00"
+  },
+  {
+    "lead_id": "L-2026-1019",
+    "subject_ref": "S-016",
+    "region_code": "320106",
+    "cross_region_group": null,
+    "trigger": {
+      "kind": "rule",
+      "version": "ruleset-2026.07",
+      "rule_ids": [
+        "R-CONC-02",
+        "R-DUP-03"
+      ],
+      "model_score": null
+    },
+    "input_watermark": {
+      "as_of": "2026-06-02T02:00:00+08:00",
+      "source_snapshots": [
+        {
+          "source": "registries",
+          "snapshot_id": "reg-20260601"
+        }
+      ]
+    },
+    "dispatch": {
+      "scope": "national",
+      "regions": [
+        "320106"
+      ],
+      "dispatched_at": "2026-06-02T09:00:00+08:00"
+    },
+    "stage": "closed",
+    "conclusion": {
+      "outcome": "legal_exception",
+      "reason_codes": [
+        "filing-on-time"
+      ],
+      "narrative": "虚构样例：新规则下被规则命中但核查为按时披露，进入测试分区。",
+      "decided_at": "2026-06-15T10:00:00+08:00"
+    },
+    "created_at": "2026-06-02T08:00:00+08:00",
+    "updated_at": "2026-06-15T10:00:00+08:00"
+  }
+]

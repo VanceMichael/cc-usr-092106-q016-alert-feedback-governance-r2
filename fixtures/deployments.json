@@ -1,0 +1,13 @@
+{
+  "deployments": [
+    {
+      "deployment_id": "D-2026-06",
+      "kind": "rule",
+      "version": "ruleset-2026.07",
+      "launched_at": "2026-06-01T00:00:00+08:00",
+      "pre_window_days": 30,
+      "post_window_days": 30,
+      "change_summary": "R-DUP-03 增加登记快照新鲜度校验以拦截数据错误；R-FLOW-11 收窄资金流阈值并要求双源印证，预期降低误报与人工分派量。"
+    }
+  ]
+}

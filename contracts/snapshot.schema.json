@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "训练用脱敏快照",
+  "description": "训练只能消费带时间切分的脱敏快照；尚未结案、跨区域重复未裁决、规则自证等记录不得混入稳定标签。",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "created_at",
+    "cutoff",
+    "split",
+    "min_label_settled_days",
+    "records",
+    "excluded",
+    "manifest"
+  ],
+  "properties": {
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "cutoff": {
+      "type": "string",
+      "format": "date-time",
+      "description": "标签水位：仅纳入 cutoff 之前签发且已稳定的标签"
+    },
+    "split": {
+      "type": "object",
+      "required": ["train_end", "validation_end"],
+      "description": "时间切分：train < train_end <= validation < validation_end <= test，按标签稳定时间划分，防止信息穿越",
+      "properties": {
+        "train_end": {"type": "string", "format": "date-time"},
+        "validation_end": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "min_label_settled_days": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "标签从签发到 cutoff 至少经过的冷静期天数，期间可被新版本推翻"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "lead_id",
+          "split",
+          "label",
+          "trigger_version",
+          "subject_pseudonym",
+          "region_bucket",
+          "label_settled_at",
+          "label_version"
+        ],
+        "properties": {
+          "record_id": {"type": "string", "minLength": 1},
+          "lead_id": {"type": "string", "minLength": 1},
+          "split": {
+            "type": "string",
+            "enum": ["train", "validation", "test"]
+          },
+          "label": {
+            "type": "string",
+            "enum": ["positive", "negative"]
+          },
+          "trigger_version": {"type": "string", "minLength": 1},
+          "subject_pseudonym": {"type": "string", "minLength": 1},
+          "region_bucket": {
+            "type": "string",
+            "description": "粗粒度区域分桶（如大区），不下沉到区县"
+          },
+          "label_settled_at": {"type": "string", "format": "date-time"},
+          "label_version": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "excluded": {
+      "type": "array",
+      "description": "被排除记录及排除码，支撑批次可用性说明",
+      "items": {
+        "type": "object",
+        "required": ["lead_id", "exclusion_code", "detail"],
+        "properties": {
+          "lead_id": {"type": "string", "minLength": 1},
+          "exclusion_code": {
+            "type": "string",
+            "enum": [
+              "open_case",
+              "cross_region_duplicate",
+              "rule_self_proof",
+              "insufficient_evidence",
+              "evidence_not_sufficient",
+              "settling_window",
+              "outside_cutoff",
+              "revoked_label",
+              "no_label",
+              "permission_denied",
+              "duplicate_cross_split"
+            ]
+          },
+          "detail": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "required": [
+        "lead_count",
+        "included_count",
+        "excluded_count",
+        "positive_count",
+        "negative_count",
+        "split_counts",
+        "transformations"
+      ],
+      "properties": {
+        "lead_count": {"type": "integer", "minimum": 0},
+        "included_count": {"type": "integer", "minimum": 0},
+        "excluded_count": {"type": "integer", "minimum": 0},
+        "positive_count": {"type": "integer", "minimum": 0},
+        "negative_count": {"type": "integer", "minimum": 0},
+        "split_counts": {
+          "type": "object",
+          "required": ["train", "validation", "test"],
+          "properties": {
+            "train": {"type": "integer", "minimum": 0},
+            "validation": {"type": "integer", "minimum": 0},
+            "test": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        "transformations": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "脱敏与变换说明，如字段删除、假名化、区域分桶、时间按月取整"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

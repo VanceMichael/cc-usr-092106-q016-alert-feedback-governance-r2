@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "复核者与签发权限",
+  "type": "object",
+  "required": ["reviewers"],
+  "properties": {
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["reviewer_id", "display_name", "roles", "region_scopes", "active"],
+        "properties": {
+          "reviewer_id": {"type": "string", "minLength": 1},
+          "display_name": {"type": "string", "minLength": 1},
+          "roles": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": ["investigator", "senior_reviewer", "auditor"]
+            },
+            "description": "investigator 可提交核查结论；senior_reviewer 可签发稳定标签；auditor 只读审计"
+          },
+          "region_scopes": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^([0-9]{6}|\\*)$"},
+            "description": "可承办区域，* 表示全国范围"
+          },
+          "active": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

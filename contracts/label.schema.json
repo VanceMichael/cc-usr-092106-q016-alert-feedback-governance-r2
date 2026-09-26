@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "标签签发记录",
+  "description": "标签只能由具备签发权限的复核者在证据充分时签发；申诉或后续案件结果以新版本形式追加，不覆盖历史版本。",
+  "type": "object",
+  "required": [
+    "lead_id",
+    "version",
+    "label",
+    "basis",
+    "issued_by",
+    "issued_at",
+    "supersedes_version",
+    "status"
+  ],
+  "properties": {
+    "lead_id": {"type": "string", "minLength": 1},
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "同一 lead_id 下单调递增；新版本由申诉或后续案件结果触发"
+    },
+    "label": {
+      "type": "string",
+      "enum": ["positive", "negative", "excluded"],
+      "description": "positive=确认违法（含已立案与违法未立案）；negative=经充分核查的阴性（合法例外、数据错误更正）；excluded=治理性排除，不进正负样本"
+    },
+    "basis": {
+      "type": "object",
+      "required": ["outcome", "evidence_ids", "evidence_sufficient", "source"],
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "violation_filed",
+            "violation_unfiled",
+            "legal_exception",
+            "insufficient_evidence",
+            "data_error",
+            "rule_self_proof",
+            "duplicate_pending",
+            "pending"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "description": "证据材料登记号，审计可据此回溯具体签发依据"
+        },
+        "evidence_sufficient": {
+          "type": "boolean",
+          "description": "证据充分性由签发人确认；证据暂缺时不得签发 positive/negative 稳定标签"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["field_check", "appeal", "case_outcome"],
+          "description": "field_check=一线核查；appeal=申诉复核；case_outcome=后续案件结果（如行政/司法认定）"
+        },
+        "appeal_id": {"type": ["string", "null"]},
+        "case_ref": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "issued_by": {"type": "string", "minLength": 1},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "supersedes_version": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["issued", "superseded", "revoked"],
+      "description": "issued 为当前生效版本；被新版本取代后置为 superseded；发现错误可 revoke"
+    },
+    "revoked_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "revoke_reason": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": false
+}

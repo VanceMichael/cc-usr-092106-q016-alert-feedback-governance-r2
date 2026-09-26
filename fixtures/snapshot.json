@@ -1,0 +1,170 @@
+{
+  "snapshot_id": "snap-2026-07-pre",
+  "created_at": "2026-07-01T10:00:00+08:00",
+  "cutoff": "2026-07-01T00:00:00+08:00",
+  "split": {
+    "train_end": "2026-04-01T00:00:00+08:00",
+    "validation_end": "2026-06-01T00:00:00+08:00"
+  },
+  "min_label_settled_days": 14,
+  "records": [
+    {
+      "record_id": "snap-2026-07-pre-00001",
+      "lead_id": "L-2026-1016",
+      "split": "train",
+      "label": "positive",
+      "trigger_version": "ruleset-2026.04",
+      "subject_pseudonym": "subj-d6920ab1c31615be",
+      "region_bucket": "southwest",
+      "label_settled_at": "2026-03-01T00:00:00+08:00",
+      "label_version": 1
+    },
+    {
+      "record_id": "snap-2026-07-pre-00002",
+      "lead_id": "L-2026-1001",
+      "split": "train",
+      "label": "positive",
+      "trigger_version": "ruleset-2026.04",
+      "subject_pseudonym": "subj-f5f41421e41d9b20",
+      "region_bucket": "north",
+      "label_settled_at": "2026-03-01T00:00:00+08:00",
+      "label_version": 1
+    },
+    {
+      "record_id": "snap-2026-07-pre-00003",
+      "lead_id": "L-2026-1002",
+      "split": "train",
+      "label": "negative",
+      "trigger_version": "riskmodel-v3",
+      "subject_pseudonym": "subj-df8397cd47046940",
+      "region_bucket": "east",
+      "label_settled_at": "2026-03-01T00:00:00+08:00",
+      "label_version": 1
+    },
+    {
+      "record_id": "snap-2026-07-pre-00004",
+      "lead_id": "L-2026-1003",
+      "split": "validation",
+      "label": "positive",
+      "trigger_version": "ruleset-2026.04+riskmodel-v3",
+      "subject_pseudonym": "subj-18a3033c82feae0d",
+      "region_bucket": "south",
+      "label_settled_at": "2026-04-01T00:00:00+08:00",
+      "label_version": 1
+    },
+    {
+      "record_id": "snap-2026-07-pre-00006",
+      "lead_id": "L-2026-1005",
+      "split": "validation",
+      "label": "negative",
+      "trigger_version": "ruleset-2026.04",
+      "subject_pseudonym": "subj-b2cb76c39f86bdd2",
+      "region_bucket": "east",
+      "label_settled_at": "2026-05-01T00:00:00+08:00",
+      "label_version": 1
+    },
+    {
+      "record_id": "snap-2026-07-pre-00007",
+      "lead_id": "L-2026-1007",
+      "split": "validation",
+      "label": "positive",
+      "trigger_version": "ruleset-2026.04",
+      "subject_pseudonym": "subj-949d7b7b1924a7df",
+      "region_bucket": "east",
+      "label_settled_at": "2026-05-01T00:00:00+08:00",
+      "label_version": 1
+    },
+    {
+      "record_id": "snap-2026-07-pre-00008",
+      "lead_id": "L-2026-1012",
+      "split": "validation",
+      "label": "positive",
+      "trigger_version": "riskmodel-v3",
+      "subject_pseudonym": "subj-5619a81a7db1aa63",
+      "region_bucket": "east",
+      "label_settled_at": "2026-05-01T00:00:00+08:00",
+      "label_version": 2
+    },
+    {
+      "record_id": "snap-2026-07-pre-00009",
+      "lead_id": "L-2026-1019",
+      "split": "test",
+      "label": "negative",
+      "trigger_version": "ruleset-2026.07",
+      "subject_pseudonym": "subj-a5c83917d2f6ee0c",
+      "region_bucket": "east",
+      "label_settled_at": "2026-06-01T00:00:00+08:00",
+      "label_version": 1
+    }
+  ],
+  "excluded": [
+    {
+      "lead_id": "L-2026-1004",
+      "exclusion_code": "insufficient_evidence",
+      "detail": "结论 insufficient_evidence 不签发稳定标签，按治理策略排除"
+    },
+    {
+      "lead_id": "L-2026-1006",
+      "exclusion_code": "rule_self_proof",
+      "detail": "结论 rule_self_proof 不构成正负样本"
+    },
+    {
+      "lead_id": "L-2026-1008",
+      "exclusion_code": "cross_region_duplicate",
+      "detail": "跨区域组 GRP-2026-77 已由主办记录 L-2026-1007 代表，去重排除"
+    },
+    {
+      "lead_id": "L-2026-1009",
+      "exclusion_code": "cross_region_duplicate",
+      "detail": "结论 duplicate_pending 不签发稳定标签，按治理策略排除"
+    },
+    {
+      "lead_id": "L-2026-1010",
+      "exclusion_code": "open_case",
+      "detail": "核查阶段 checking，尚未结案"
+    },
+    {
+      "lead_id": "L-2026-1011",
+      "exclusion_code": "revoked_label",
+      "detail": "当前标签版本已撤销"
+    },
+    {
+      "lead_id": "L-2026-1013",
+      "exclusion_code": "settling_window",
+      "detail": "签发于 2026-06-26T09:00:00+08:00，需经过 14 天冷静期方可稳定"
+    },
+    {
+      "lead_id": "L-2026-1014",
+      "exclusion_code": "outside_cutoff",
+      "detail": "标签签发于 2026-08-02T09:00:00+08:00，晚于水位 2026-07-01T00:00:00+08:00"
+    },
+    {
+      "lead_id": "L-2026-1015",
+      "exclusion_code": "evidence_not_sufficient",
+      "detail": "签发记录未确认证据充分"
+    },
+    {
+      "lead_id": "L-2026-1017",
+      "exclusion_code": "duplicate_cross_split",
+      "detail": "同一主体已在 train 分区出现，禁止跨分区泄漏"
+    }
+  ],
+  "manifest": {
+    "lead_count": 18,
+    "included_count": 8,
+    "excluded_count": 10,
+    "positive_count": 5,
+    "negative_count": 3,
+    "split_counts": {
+      "train": 3,
+      "validation": 4,
+      "test": 1
+    },
+    "transformations": [
+      "主体标识使用加盐 SHA-256 假名化（salt 指纹 0e0a583a）",
+      "区域由区县代码下沉为省级大区桶",
+      "标签稳定时间按月取整",
+      "删除叙述性结论与证据登记号原文，仅保留版本与时间引用"
+    ]
+  }
+}
